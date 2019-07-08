@@ -6,9 +6,11 @@ class GamePage {
 
     createGamePage() {
         // document.body.innerHTML =''
-
-        let title = document.createElement('h1'); 
-        let toy_cards= [
+        let title = document.getElementById('title')
+        let header = document.createElement('h1'); 
+        header.innerText = 'MATCH THE CARDS';
+        title.append(header);
+        let toy_cards = [
         
             {
               "id": 1,
