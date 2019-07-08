@@ -30,10 +30,4 @@ class Card {
 
     }
 
-    // function turnCardOver() {
-    //     img.src = this.image
-    //         sleep 5000
-    //         img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-    //     }
-
 }

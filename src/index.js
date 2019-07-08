@@ -5,7 +5,33 @@ class GamePage {
     }
 
     createGamePage() {
-        // document.body.innerHTML =''
+        
+        body.innerText = ''
+        
+
+        let title_div = document.createElement('div');
+        title_div.setAttribute('id', 'title');
+
+        let card_area_container = document.createElement('div');
+        card_area_container.setAttribute('class', 'card-area-container');
+        card_area_container.setAttribute('style', 'text-align: center;');
+
+        let card_area = document.createElement('div');
+        card_area.setAttribute('style', 'justify-content: center; width: 50%; margin: auto;')
+        card_area.setAttribute('id', 'card-area');
+        card_area.setAttribute('class', 'row');
+
+        let back_button = document.createElement('button');
+        back_button.innerText = 'Back to Home Page';
+        back_button.addEventListener('click', ()=> {
+            
+        })
+
+        body.append(title_div, card_area_container, card_area);
+
+
+
+
         let title = document.getElementById('title')
         let header = document.createElement('h1'); 
         header.innerText = 'MATCH THE CARDS';
