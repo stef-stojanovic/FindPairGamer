@@ -58,10 +58,10 @@ let toy_cards= [
 
 function get_cards(deck) {
   for (let i =0; i < deck.length; i++) {
-      new Card (deck[i].name, deck[i].image)
+      new Card(deck[i].name, deck[i].image)
   }
 
 }
 
 
-get_cards()
+get_cards(toy_cards);
