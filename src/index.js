@@ -5,8 +5,9 @@ class GamePage {
     }
 
     createGamePage() {
-        // document.body.innerHTML =''
 
+        document.querySelector(".container").style.display ='none'
+        // document.querySelector("card-area").innerHTML = " "
         let title = document.createElement('h1'); 
         let toy_cards= [
         
@@ -116,7 +117,7 @@ class GamePage {
 }
 
 // Hard Code Card Decks
-startButton = document.getElementById("new-toy-btn")
-startButton.addEventListener('click', () => {
-    new GamePage()
-})
+// startButton = document.getElementById("new-toy-btn")
+// startButton.addEventListener('click', () => {
+//     new GamePage()
+// })
