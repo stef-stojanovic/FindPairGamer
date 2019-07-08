@@ -5,11 +5,12 @@ class GamePage {
     }
 
     createGamePage() {
-
-        document.querySelector(".container").style.display ='none'
-        // document.querySelector("card-area").innerHTML = " "
-        let title = document.createElement('h1'); 
-        let toy_cards= [
+        // document.body.innerHTML =''
+        let title = document.getElementById('title')
+        let header = document.createElement('h1'); 
+        header.innerText = 'MATCH THE CARDS';
+        title.append(header);
+        let toy_cards = [
         
             {
               "id": 1,
