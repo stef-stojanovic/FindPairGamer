@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: monospace;
+    text-align: center;
   }
   
   #toy-header {
@@ -34,7 +35,7 @@ body {
   
   .toy-avatar {
     justify-self: center;
-    height: 12rem;
+    height: 10rem;
     width: auto;
   }
   
@@ -97,4 +98,14 @@ body {
     font-family: monospace;
     margin: 3px;
   }
+
+  #card-area {
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+      }
+  }
   
+  .card-area-container {
+      text-align: center;
+  }
