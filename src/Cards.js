@@ -12,13 +12,13 @@ class Card {
     create_card() {
         
         let game_page_div = document.getElementById('game_page_div');
-        let div_row = document.querySelector('div.row');
+        let div_flex = document.querySelector('div.flex-wrap');
 
 
         let div = document.createElement('div');
-        div.setAttribute('class', 'col-2');
+        div.setAttribute('class', 'x');
         div.setAttribute('id', this.id)
-        div.setAttribute('style', 'justify-content: center; width: 50%; margin: auto;')
+        // div.setAttribute('style', 'justify-content: center; width: 50%; margin: auto;')
 
         let img = document.createElement('img');
         img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg";
@@ -33,9 +33,9 @@ class Card {
         })
         div.append(img)
 
-        div_row.append(div)
+        div_flex.append(div)
         
-        game_page_div.append(div_row);
+        game_page_div.append(div_flex);
 
     }
 
