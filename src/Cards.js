@@ -27,10 +27,13 @@ class Card {
 
         img.addEventListener('click', () => {
             img.src = this.image
+            console.log(`${this}`)
+            let card1 = this.id
             setTimeout( ()=>{
                 img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
             }, 2000)
         })
+
         div.append(img)
 
         div_flex.append(div)

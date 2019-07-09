@@ -26,9 +26,8 @@ class GamePage {
 
         let back_to_home = document.createElement('button');
         back_to_home.innerText = 'Home Page';
-        back_to_home.setAttribute('id', 'back_to_home')
+        back_to_home.setAttribute('id', 'back_to_home');
         back_to_home.addEventListener('click' , () => {
-            console.log('sup')
             new HomePage()
         })
         game_title_div.append(back_to_home);
@@ -144,6 +143,13 @@ class GamePage {
                 new Card(deck[i].name, deck[i].image, deck[i].id)
             }
     
+        }
+
+        match_cards(card1, card2) {
+            if (card1 == card2) {
+                
+            }
+
         }
 
 

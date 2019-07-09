@@ -61,7 +61,7 @@ body {
   .toy-avatar {
     justify-self: center;
     height: 8rem;
-    width: auto;
+    width: 8rem;
   }
   
   button {
