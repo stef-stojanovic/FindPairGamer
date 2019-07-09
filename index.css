@@ -147,7 +147,7 @@ body {
 }
 
   #game_page_div {
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-content: center;
   } 
@@ -157,5 +157,20 @@ body {
     margin: auto;
     justify-content: center;
 
+
+  }
+
+  #back_to_home {
+    width: 17%;
+    margin: auto;
+    display: block;
+    justify-content: center;
+  } 
+
+  .flex-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 20px;
+    justify-content: center;
 
   }

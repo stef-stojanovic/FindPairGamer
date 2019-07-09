@@ -27,9 +27,14 @@ class GamePage {
         h3.innerText = 'focus!!!';
         game_title_div.append(h3);
 
-        let div_row = document.createElement('div');
-        div_row.setAttribute('class', 'row');
-        game_page_div.append(game_title_div, div_row);
+        let back_to_home = document.createElement('button');
+        back_to_home.innerText = 'Home Page';
+        back_to_home.setAttribute('id', 'back_to_home')
+        game_title_div.append(back_to_home);
+
+        let div_flex = document.createElement('div');
+        div_flex.setAttribute('class', 'flex-wrap');
+        game_page_div.append(game_title_div, div_flex);
 
         let toy_cards = [
             
@@ -140,7 +145,7 @@ class GamePage {
     
         }
 
-        
+
         
         
     }
