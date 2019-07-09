@@ -1,23 +1,26 @@
 class GamePage {
-    constructor() {
+    constructor(userName) {
 
+        this.userName = userName
         this.render()
         
+        
+        
     }
-
+    
     render() {
         
         let game_page_div = document.querySelector('#game_page_div');
         game_page_div.innerText = '';
-        main_page_div.innerText = '';
-
-
+        main_page_div.style.display = 'none';
+        
+        console.log(this.userName)
 
         let game_title_div = document.createElement('div');
         game_title_div.setAttribute('id', 'game_title_div');
 
         let h1 = document.createElement('h1');
-        h1.innerText = 'Good Luck';
+        h1.innerText = `Good Luck ${this.userName}`;
         game_title_div.append(h1);
 
         let h3 = document.createElement('h3');
