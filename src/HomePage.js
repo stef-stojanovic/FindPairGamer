@@ -34,7 +34,7 @@ class HomePage {
     game_page_div.innerText = '';
     
     let title_div = document.createElement('div');
-    title_div.setAttribute('id', 'title_div')
+    title_div.setAttribute('id', 'home_page_title_div')
     main_page_div.append(title_div);
     
     let title_img = document.createElement('img');
@@ -51,18 +51,45 @@ class HomePage {
     startButton.innerHTML = "Start New Game"
     title_div.append(startButton)
     startButton.addEventListener('click', () => {
-        new GamePage()
+      this.typeInUser(title_div)
+      // new GamePage()
     })
+  }
+  
+  // Registering User
+  typeInUser(title_div){
+    let signInDiv = document.createElement('div')
+    
+    // Creating Form
+    let signInForm = document.createElement('form')
+    signInForm.setAttribute('class', "user_form")
+    signInDiv.append(document.createElement('br'))
+    signInDiv.append(signInForm)
+    
+      // Creating Text Field and Line Break 
+      let signInInput = document.createElement('input')
+      signInInput.setAttribute('placeholder', "Enter your Username")
+      signInInput.setAttribute('value', "")
+      signInInput.setAttribute('type', "text")
+      signInForm.append(signInInput)
+      signInForm.append(document.createElement('br'))
+      signInForm.append(document.createElement('br'))
 
-    // let signInDiv = document.createElement('div')
-    // let signInInput = document.createElement('input')
-    // signInInput.setAttribute('value', "Submit")
-    // signInInput.setAttribute('type', "text")
-    // let signInButton = document.createElement('input')
-    // signInInput.setAttribute('value', "Submit")
-    // signInInput.setAttribute('type', "text")
-    // signInDiv.append(signInInput)
-    // main_page_div.append(signInDiv)
+      // Creating Submit Button
+      let signInButton = document.createElement('input')
+      signInButton.setAttribute('placeholder', "Enter your Username")
+      signInButton.setAttribute('type', "submit")
+      signInForm.append(signInButton)
+      title_div.append(signInDiv)
+      
+      signInButton.addEventListener('click', (e)=>{
+        e.preventDefault()
+        let userName = signInInput.value
+        console.log(userName)
+        new GamePage(userName)
+      })
+
+    }
 
 
 
@@ -79,7 +106,7 @@ class HomePage {
   // <p style='text-align:center'> <button id='new-toy-btn'>Start a new game!</button></p> -->
 
 
-  }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
