@@ -167,4 +167,6 @@ body {
     display: flex;
     flex-flow: row wrap;
     margin: 20px;
+    justify-content: center;
+
   }
