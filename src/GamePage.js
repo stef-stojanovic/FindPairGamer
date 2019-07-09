@@ -13,9 +13,7 @@ class GamePage {
         let game_page_div = document.querySelector('#game_page_div');
         game_page_div.innerText = '';
         main_page_div.style.display = 'none';
-        
-        console.log(this.userName)
-
+    
         let game_title_div = document.createElement('div');
         game_title_div.setAttribute('id', 'game_title_div');
 
