@@ -34,6 +34,7 @@ class HomePage {
     game_page_div.innerText = '';
     
     let title_div = document.createElement('div');
+    title_div.setAttribute('id', 'home_page_title_div')
     main_page_div.append(title_div);
     
     let title_img = document.createElement('img');
