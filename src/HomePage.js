@@ -34,6 +34,7 @@ class HomePage {
     game_page_div.innerText = '';
     
     let title_div = document.createElement('div');
+    title_div.setAttribute('id', 'title_div')
     main_page_div.append(title_div);
     
     let title_img = document.createElement('img');
@@ -48,7 +49,7 @@ class HomePage {
     let startButton = document.createElement('button')
     startButton.setAttribute('id', 'start_game')
     startButton.innerHTML = "Start New Game"
-    main_page_div.append(startButton)
+    title_div.append(startButton)
     startButton.addEventListener('click', () => {
         new GamePage()
     })
