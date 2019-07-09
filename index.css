@@ -3,7 +3,14 @@ body {
     font-family: monospace;
     text-align: center;
   }
+
+  #main_page_div {
+    display: flex;
+    justify-content: center;
+  }
+
   
+
   #toy-header {
     display: flex;
     justify-content: center;
@@ -35,7 +42,7 @@ body {
   
   .toy-avatar {
     justify-self: center;
-    height: 10rem;
+    height: 8rem;
     width: auto;
   }
   
@@ -99,16 +106,17 @@ body {
     margin: 3px;
   }
 
-  #card-area {
-    justify-content: center;
-    width: 50%;
-    margin: auto;
-      }
   
-  .card-area-container {
+  .game_title_div {
       text-align: center;
   }
 
   #title {
     text-align: center;
 }
+
+  #game_page_div {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+  } 
