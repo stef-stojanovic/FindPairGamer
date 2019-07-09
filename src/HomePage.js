@@ -43,6 +43,7 @@ class HomePage {
     }
     highScoreDiv.setAttribute('class', 'high_score_container')
     highScoreDiv.append(highScoreHeader, highScoreList)
+    main_page_div.append(document.createElement('br'))
     main_page_div.append(highScoreDiv)
   }
   
