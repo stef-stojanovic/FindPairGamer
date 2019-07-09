@@ -148,12 +148,6 @@ class GamePage {
     
         }
 
-        match_cards(card1, card2) {
-            if (card1 == card2) {
-                
-            }
-
-        }
 
 
         
