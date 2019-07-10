@@ -31,10 +31,13 @@ class Card {
         
         img.addEventListener('click', () => {
             
+            let total_moves_num = document.getElementById('total_moves_num');
+            total_moves++
+            console.log(total_moves)
+            total_moves_num.innerText = `moves: ${total_moves}`;
             img.src = this.image;
-            
-            // clicked_cards.push(this.id);
-            // console.log(clicked_cards.length);
+            clicked_cards.push(this.id);
+            console.log(clicked_cards.length);
 
             
             setTimeout( ()=>{
@@ -50,17 +53,17 @@ class Card {
         
     }
     
-    // flipped_cards() {
-    //     if (clicked_cards.length == 2) {
-    //         if (clicked_cards[0] == clicked_cards[1]) {
-    //             for (let i = 0; i <= clicked_cards.length-1; i++) {
-    //                 clicked_cards[i].src = 'gray.png' 
-    //             }
-    //         }
-    //     } else {
+    flipped_cards() {
+        if (clicked_cards.length == 2) {
+            if (clicked_cards[0] == clicked_cards[1]) {
+                for (let i = 0; i <= clicked_cards.length-1; i++) {
+                    clicked_cards[i].src = 'gray.png' 
+                }
+            }
+        } else {
     
-    //     }
-    // }
+        }
+    }
         
 
 }
