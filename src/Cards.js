@@ -9,10 +9,9 @@ class Card {
 
     }
 
-    
+
     create_card() {
         
-        let clicked_cards = [];
 
         let game_page_div = document.getElementById('game_page_div');
         let div_flex = document.querySelector('div.flex-wrap');
@@ -33,11 +32,10 @@ class Card {
             
             let total_moves_num = document.getElementById('total_moves_num');
             total_moves++
-            console.log(total_moves)
             total_moves_num.innerText = `moves: ${total_moves}`;
             img.src = this.image;
-            clicked_cards.push(this.id);
-            console.log(clicked_cards.length);
+            clicked_cards.push(this);
+            console.log(clicked_cards);
 
             
             setTimeout( ()=>{
