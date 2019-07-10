@@ -9,6 +9,8 @@ class HomePage {
     let main_page_div = document.querySelector('#main_page_div');
     main_page_div.innerText = '';
     game_page_div.innerText = '';
+    main_page_div.style.display = 'block';
+    
     
     let title_div = document.createElement('div');
     title_div.setAttribute('id', 'home_page_title_div')
