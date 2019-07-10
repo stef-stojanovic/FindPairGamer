@@ -20,6 +20,8 @@ class GamePage {
         // Create div to place title, back button, and score
         let game_div_row = document.createElement('div');
         game_div_row.setAttribute('class', 'row')
+        game_div_row.setAttribute('style', 'margin: 15px;')
+
     
         // Create div and assign id game_title_div
         let game_title_div = document.createElement('div');
@@ -36,6 +38,12 @@ class GamePage {
         h3.innerText = 'focus!!!';
         game_title_div.append(h3);
 
+        // Create back button div
+        let back_button_div = document.createElement('div');
+        back_button_div.setAttribute('id', 'back_button_div');
+        back_button_div.setAttribute('class', 'col');
+        
+
         // Back to Home Page Button
         let back_to_home = document.createElement('button');
         back_to_home.innerText = 'Home Page';
@@ -43,13 +51,13 @@ class GamePage {
         back_to_home.addEventListener('click' , () => {
             new HomePage()
         })
-        game_title_div.append(back_to_home);
+        back_button_div.append(back_to_home);
 
         // Create Flex-Wrap div to put cards in
         let div_flex = document.createElement('div');
         div_flex.setAttribute('class', 'flex-wrap');
         game_page_div.append(game_div_row, div_flex);
-        game_div_row.append(game_title_div);
+        game_div_row.append(game_title_div, back_button_div);
 
         // Create # of moves element
         let total_moves_div = document.createElement('div');
@@ -178,7 +186,6 @@ class GamePage {
             total_moves_div.append(timerDiv)
             let x = setInterval(function () { 
                 timer += 1   
-                console.log(timer)
                 timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
             }, 1000)
         }

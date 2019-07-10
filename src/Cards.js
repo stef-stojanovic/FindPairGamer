@@ -36,7 +36,19 @@ class Card {
             img.src = this.image;
             clicked_cards.push(this);
             console.log(clicked_cards);
-
+            
+            if (clicked_cards.length >= 2) {
+                if (clicked_cards[0] == clicked_cards[1]) {
+                    points+=2;
+                    console.log(points);
+                    for (let i = 0; i <= 1; i++) {
+                        clicked_cards[i].src = 'gray.png'
+                    }
+                }
+                else {
+                    clicked_cards = []
+                }
+            }
             
             setTimeout( ()=>{
                 img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
@@ -52,15 +64,6 @@ class Card {
     }
     
     flipped_cards() {
-        if (clicked_cards.length == 2) {
-            if (clicked_cards[0] == clicked_cards[1]) {
-                for (let i = 0; i <= clicked_cards.length-1; i++) {
-                    clicked_cards[i].src = 'gray.png' 
-                }
-            }
-        } else {
-    
-        }
     }
         
 
