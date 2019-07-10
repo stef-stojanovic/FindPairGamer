@@ -10,13 +10,16 @@ class GamePage {
     
     render() {
         
+        // Locate game_page_div and clear contents, hide main_page_div display
         let game_page_div = document.querySelector('#game_page_div');
         game_page_div.innerText = '';
         main_page_div.style.display = 'none';
     
+        // Create div and assign id game_title_div
         let game_title_div = document.createElement('div');
         game_title_div.setAttribute('id', 'game_title_div');
 
+        // Create headers
         let h1 = document.createElement('h1');
         h1.innerText = `Good Luck ${this.userName}`;
         game_title_div.append(h1);
@@ -25,6 +28,7 @@ class GamePage {
         h3.innerText = 'focus!!!';
         game_title_div.append(h3);
 
+        // Back to Home Page Button
         let back_to_home = document.createElement('button');
         back_to_home.innerText = 'Home Page';
         back_to_home.setAttribute('id', 'back_to_home');
@@ -33,6 +37,7 @@ class GamePage {
         })
         game_title_div.append(back_to_home);
 
+        // Create Flex-Wrap div to put cards in
         let div_flex = document.createElement('div');
         div_flex.setAttribute('class', 'flex-wrap');
         game_page_div.append(game_title_div, div_flex);
@@ -137,7 +142,7 @@ class GamePage {
             
         }
 
-        // Toy Card Array to Create New Cards
+        // Method to shuffle and create card instances
         get_cards(deck) {
             deck.sort(()=>Math.random()-0.5)
             for (let i =0; i < deck.length; i++) {
