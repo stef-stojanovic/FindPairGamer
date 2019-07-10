@@ -175,11 +175,11 @@ class GamePage {
             let timer;
             let timerDiv = document.createElement('div')
             timer = 0; 
-            game_title_div.append(timerDiv)
+            total_moves_div.append(timerDiv)
             let x = setInterval(function () { 
                 timer += 1   
                 console.log(timer)
-                timerDiv.innerHTML = `<h2>${timer}<h2>`
+                timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
             }, 1000)
         }
         
