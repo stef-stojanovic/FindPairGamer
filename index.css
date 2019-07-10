@@ -130,7 +130,7 @@ body {
     margin: 3px;
   }
   
-  .game_title_div {
+  #game_title_div {
       text-align: center;
       justify-content: center;
   }
@@ -184,3 +184,5 @@ body {
     text-align: center;
     margin: auto;
    }
+
+   

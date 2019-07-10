@@ -31,12 +31,13 @@ class Card {
         
         img.addEventListener('click', () => {
             
-            moves++
-            console.log(moves)
+            let total_moves_num = document.getElementById('total_moves_num');
+            total_moves++
+            console.log(total_moves)
+            total_moves_num.innerText = `moves: ${total_moves}`;
             img.src = this.image;
-            
-            // clicked_cards.push(this.id);
-            // console.log(clicked_cards.length);
+            clicked_cards.push(this.id);
+            console.log(clicked_cards.length);
 
             
             setTimeout( ()=>{
