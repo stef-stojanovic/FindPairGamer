@@ -1,27 +1,3 @@
-// class HomePage {
-//   constructor() {
-    
-//     this.loadHomePage()
-//   }
-  
-//   loadHomePage() {
-    
-//     let startButton = document.getElementById("new-toy-btn")
-//     startButton.addEventListener('click', () => {
-//       let startForm = document.querySelector('.container')
-//       startForm.style.display = 'block'
-//       let form = document.querySelector("input.submit")
-//       form.addEventListener('click', (e) => {
-//         e.preventDefault()
-//         new GamePage()
-//       })
-      
-//       // form.addEventListener('click', startGame)
-//     })
-//   }
-// }
-
-
 class HomePage {
   constructor() {
     this.render()
@@ -29,9 +5,12 @@ class HomePage {
 
   render() {
     
+    // Front Page
     let main_page_div = document.querySelector('#main_page_div');
     main_page_div.innerText = '';
     game_page_div.innerText = '';
+    main_page_div.style.display = 'block';
+    
     
     let title_div = document.createElement('div');
     title_div.setAttribute('id', 'home_page_title_div')
@@ -45,43 +24,75 @@ class HomePage {
     memory_img.src = 'memory_game.png';
     title_div.append(memory_img);
     
-    // Hard Code Card Decks
+    // Start Button
     let startButton = document.createElement('button')
     startButton.setAttribute('id', 'start_game')
     startButton.innerHTML = "Start New Game"
-    main_page_div.append(startButton)
+    title_div.append(startButton)
     startButton.addEventListener('click', () => {
-        new GamePage()
+      this.typeInUser(title_div)
     })
 
-    // let signInDiv = document.createElement('div')
-    // let signInInput = document.createElement('input')
-    // signInInput.setAttribute('value', "Submit")
-    // signInInput.setAttribute('type', "text")
-    // let signInButton = document.createElement('input')
-    // signInInput.setAttribute('value', "Submit")
-    // signInInput.setAttribute('type', "text")
-    // signInDiv.append(signInInput)
-    // main_page_div.append(signInDiv)
-
-
-
+    // High Score Table
+    let highScoreDiv = document.createElement('div')
+    let highScoreList = document.createElement('ol')
+    let highScoreHeader = document.createElement('h2')
+    highScoreHeader.innerHTML = "High Score"
+    for(let i = 0; i <=3; i++){
+      let score = document.createElement('li')
+      score.innerHTML = `[Player] + [Score]`
+      highScoreList.append(score)
+    }
+    highScoreDiv.setAttribute('class', 'high_score_container')
+    highScoreDiv.append(highScoreHeader, highScoreList)
+    main_page_div.append(document.createElement('br'))
+    main_page_div.append(highScoreDiv)
+  }
+  
+  // Registering User
+  typeInUser(title_div){
+    let signInDiv;
+    if(document.getElementById('sign_in_div') == null)
+    {
+      signInDiv = document.createElement('div')
+      signInDiv.setAttribute('id', 'sign_in_div');
+      }  
+    else{
+      signInDiv = document.getElementById('sign_in_div') 
+      signInDiv.innerHTML= ""
+    }
+    // Creating Form
+    let signInForm = document.createElement('form')
+    signInForm.setAttribute('class', "user_form")
+    signInDiv.append(document.createElement('br'))
+    signInDiv.append(signInForm)
     
-  //   <!-- <div class="container">
-  //   <form class="add-toy-form" style="">
-  //     <h3>Create a toy!</h3>
-
-  //     <input type="text" name="name" value="" placeholder="Enter your username" class="input-text">
-  //     <br>
-  //     <input type="submit" name="submit" value="Create New Toy" class="submit">
-  //   </form>
-  // </div>
-  // <p style='text-align:center'> <button id='new-toy-btn'>Start a new game!</button></p> -->
-
-
+    // Creating Text Field and Line Break 
+    let signInInput = document.createElement('input')
+    signInInput.setAttribute('placeholder', "Enter your Username")
+    signInInput.setAttribute('value', "")
+    signInInput.setAttribute('type', "text")
+    signInForm.append(signInInput)
+    signInForm.append(document.createElement('br'))
+    signInForm.append(document.createElement('br'))
+    
+    // Creating Submit Button
+    let signInButton = document.createElement('input')
+    signInButton.setAttribute('placeholder', "Enter your Username")
+    signInButton.setAttribute('type', "submit")
+    signInForm.append(signInButton)
+    title_div.append(signInDiv)
+    
+    // Starting Game Page
+    signInButton.addEventListener('click', (e)=>{
+      e.preventDefault()
+      let userName = signInInput.value
+      new GamePage(userName)
+    })
   }
 }
 
+// Starting Home Page
 document.addEventListener('DOMContentLoaded', () => {
   new HomePage()
 })
