@@ -1,9 +1,9 @@
 class GamePage {
     constructor(userName) {
-
+        
         this.userName = userName
         this.render()
-        
+        this.timer()
         
         
     }
@@ -20,7 +20,7 @@ class GamePage {
         let h1 = document.createElement('h1');
         h1.innerText = `Good Luck ${this.userName}`;
         game_title_div.append(h1);
-
+        
         let h3 = document.createElement('h3');
         h3.innerText = 'focus!!!';
         game_title_div.append(h3);
@@ -36,6 +36,8 @@ class GamePage {
         let div_flex = document.createElement('div');
         div_flex.setAttribute('class', 'flex-wrap');
         game_page_div.append(game_title_div, div_flex);
+        
+        
 
         let toy_cards = [
             
@@ -134,7 +136,6 @@ class GamePage {
         
         this.get_cards(toy_cards);
             
-            
         }
 
         // Toy Card Array to Create New Cards
@@ -146,10 +147,18 @@ class GamePage {
     
         }
 
-
-
-        
+        // Timer on Game Page
+        timer() {
+            let timer;
+            let timerDiv = document.createElement('div')
+            timer = 0; 
+            game_title_div.append(timerDiv)
+            let x = setInterval(function () { 
+                timer += 1   
+                console.log(timer)
+                timerDiv.innerHTML = `<h2>${timer}<h2>`
+            }, 1000)
+        }
         
     }
 
-    // new GamePage()
