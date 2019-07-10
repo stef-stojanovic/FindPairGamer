@@ -1,9 +1,9 @@
 class GamePage {
     constructor(userName) {
-
+        
         this.userName = userName
         this.render()
-        
+        this.timer()
         
         
     }
@@ -30,7 +30,7 @@ class GamePage {
         let h1 = document.createElement('h1');
         h1.innerText = `Good Luck ${this.userName}`;
         game_title_div.append(h1);
-
+        
         let h3 = document.createElement('h3');
         h3.setAttribute('id', 'focus')
         h3.innerText = 'focus!!!';
@@ -159,7 +159,6 @@ class GamePage {
         
         this.get_cards(toy_cards);
             
-            
         }
 
         // Method to shuffle and create card instances
@@ -171,10 +170,18 @@ class GamePage {
     
         }
 
-
-
-        
+        // Timer on Game Page
+        timer() {
+            let timer;
+            let timerDiv = document.createElement('div')
+            timer = 0; 
+            game_title_div.append(timerDiv)
+            let x = setInterval(function () { 
+                timer += 1   
+                console.log(timer)
+                timerDiv.innerHTML = `<h2>${timer}<h2>`
+            }, 1000)
+        }
         
     }
 
-    // new GamePage()
