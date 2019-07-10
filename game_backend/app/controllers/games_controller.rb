@@ -4,9 +4,14 @@ class GamesController < ApplicationController
         render json: game
     end
 
+    def index
+        game = Game.all
+        render json: game
+    end
+
     def update
-        # Find the player
-        # Save params in the database -> Update the player we find
+        # Locates current game
+        # Save params in the database -> Update the User info
         game = Game.find(params[:id])
         game.update(game_params)
     end
