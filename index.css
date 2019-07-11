@@ -188,13 +188,41 @@ body {
    .matched {
      pointer-events: none;
      justify-self: center;
+     animation-name: rubberBand;
+     animation-duration: .75s;
      height: 8rem;
      width: 8rem;
    }
 
    .turned_over {
+    transform: rotateY(0);
+    animation-name: flipInY;
+    animation-duration: .75s;
     pointer-events: none;
     justify-self: center;
     height: 8rem;
     width: 8rem;
   }
+
+  @keyframes flipInY {
+    from {
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      animation-timing-function: ease-in;
+    }
+    
+    to {
+      transform: perspective(400px)
+    }
+  }
+
+  @keyframes rubberBand {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+
+  }
+

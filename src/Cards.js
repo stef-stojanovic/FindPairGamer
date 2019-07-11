@@ -11,7 +11,6 @@ class Card {
 
 
     create_card() {
-        
 
         let game_page_div = document.getElementById('game_page_div');
         let div_flex = document.querySelector('div.flex-wrap');
