@@ -16,64 +16,61 @@ class Card {
         let game_page_div = document.getElementById('game_page_div');
         let div_flex = document.querySelector('div.flex-wrap');
 
-
         let div = document.createElement('div');
         div.setAttribute('class', 'x');
-        div.setAttribute('id', this.id)
+        
+        let card_id = this.id
+        let card_image = this.image
+        let card_name = this.name
         // div.setAttribute('style', 'justify-content: center; width: 50%; margin: auto;')
-
+        
         let img = document.createElement('img');
         img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg";
         img.setAttribute('class', 'toy-avatar');
+        img.setAttribute('id', card_id)
+        img.setAttribute('name', card_name)
         
-        img.addEventListener('click', () => {
-            
-            if (clicked_cards.length == 2) {
-                clicked_cards.forEach((clicked_card) => {
-                    clicked_card.image = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-                })
-                console.log(clicked_cards)
-                clicked_cards = []
-                
-                return 
-            }
-            else {
-            // Moves Counter
+        img.addEventListener('click', displayCard);
+        img.addEventListener('click', openCard)
+        // img.addEventListener('click', gameOver)
+
+        function displayCard() {
             let total_moves_num = document.getElementById('total_moves_num');
             total_moves++
             total_moves_num.innerText = `Moves: ${total_moves}`;
-            img.src = this.image;
+            img.src = card_image;
+        }
+        
+        function openCard() {
             clicked_cards.push(this);
-            console.log(clicked_cards);
-            if (clicked_cards.length == 2){     
+            if (clicked_cards.length == 2){
                 if (clicked_cards[0].id == clicked_cards[1].id) {
                     points += 2;
-                    console.log(points);
-                    clicked_cards.forEach((clicked_card)=>{
-                        clicked_card.image = 'gray.png'
-                    })
-                }
+                    clicked_cards = []
+                    }
                 else {
-                    clicked_cards.forEach((clicked_card) => {
-                        setTimeout( ()=>{
-                        clicked_card.image = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-                    }, 2000)
-                })
-                    // clicked_cards = []
+                    setTimeout(function(){
+                        let card1 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[0].name}`))
+                        console.log(card1)
+                        card1.forEach((card)=>{
+                            card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                        })
+                        let card2 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[1].name}`))
+                        card2.forEach((card)=>{
+                            card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                        })
+                        clicked_cards = []
+                    }, 1500)
+                    }
                 }
             }
-            else {
-                return
-            }
-            }
-            })
             
             div.append(img)
-        
-        div_flex.append(div)
-        
-        game_page_div.append(div_flex);
-        
+            
+            div_flex.append(div)
+            
+            game_page_div.append(div_flex);
+            
     }
     
     flipped_cards() {
