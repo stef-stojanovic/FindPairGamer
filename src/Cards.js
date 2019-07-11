@@ -27,39 +27,6 @@ class Card {
         let img = document.createElement('img');
         img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg";
         img.setAttribute('class', 'toy-avatar');
-<<<<<<< HEAD
-        img.setAttribute('id', this.id)
-
-        
-        img.addEventListener('click', () => {
-            
-            let dealt_cards = document.querySelectorAll(`img.toy-avatar`)
-            let total_moves_num = document.getElementById('total_moves_num');
-            if (clicked_cards.length == 2) {
-                total_moves++
-                console.log(total_moves);
-                if (clicked_cards[0].id == clicked_cards[1].id) {
-                    points+=2
-                    clicked_cards = [];
-                }
-                else {
-                    let unmatched_cards = document.querySelectorAll
-                    clicked_cards = [];
-                }
-            }
-
-
-            
-        
-            
-        })
-        
-        div.append(img);
-
-        div_flex.append(div);
-        
-        game_page_div.append(div_flex);
-=======
         img.setAttribute('id', card_id)
         img.setAttribute('name', card_name)
         
@@ -79,6 +46,7 @@ class Card {
             if (clicked_cards.length == 2){
                 if (clicked_cards[0].id == clicked_cards[1].id) {
                     points += 2;
+
                     clicked_cards = []
                     }
                 else {
@@ -105,9 +73,8 @@ class Card {
             game_page_div.append(div_flex);
             
     }
->>>>>>> 546a26eb7db094b6d894cde2b9067507548b03dd
     
         
 
-    }
+
 }
