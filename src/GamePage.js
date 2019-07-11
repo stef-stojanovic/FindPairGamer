@@ -78,17 +78,17 @@ class GamePage {
             },
             {
             "id": 2,
-            "name": "Buzz Lightyear",
+            "name": "BuzzLightyear",
             "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
             },
             {
             "id": 3,
-            "name": "Mr. Potato Head",
+            "name": "Mr.PotatoHead",
             "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
             },
             {
             "id": 4,
-            "name": "Slinky Dog",
+            "name": "SlinkyDog",
             "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
             },
             {
@@ -98,7 +98,7 @@ class GamePage {
             },
             {
             "id": 6,
-            "name": "Bo Peep",
+            "name": "BoPeep",
             "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
             },
             {
@@ -108,7 +108,7 @@ class GamePage {
             },
             {
             "id": 8,
-            "name": "Little Green Men",
+            "name": "LittleGreenMen",
             "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
             },
             {
@@ -123,17 +123,17 @@ class GamePage {
             },
             {
                 "id": 2,
-                "name": "Buzz Lightyear",
+                "name": "BuzzLightyear",
                 "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
             },
             {
                 "id": 3,
-                "name": "Mr. Potato Head",
+                "name": "Mr.PotatoHead",
                 "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
             },
             {
                 "id": 4,
-                "name": "Slinky Dog",
+                "name": "SlinkyDog",
                 "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
             },
             {
@@ -143,7 +143,7 @@ class GamePage {
             },
             {
                 "id": 6,
-                "name": "Bo Peep",
+                "name": "BoPeep",
                 "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
             },
             {
@@ -153,7 +153,7 @@ class GamePage {
             },
             {
                 "id": 8,
-                "name": "Little Green Men",
+                "name": "LittleGreenMen",
                 "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
             },
             {
