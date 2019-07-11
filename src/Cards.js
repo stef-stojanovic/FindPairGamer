@@ -39,32 +39,41 @@ class Card {
             total_moves++
             total_moves_num.innerText = `Moves: ${total_moves}`;
             img.src = card_image;
+            img.classList.add('turned_over')
+
+
         }
         
         function openCard() {
-            clicked_cards.push(this);
-            if (clicked_cards.length == 2){
-                if (clicked_cards[0].id == clicked_cards[1].id) {
-                    points += 2;
-
-                    clicked_cards = []
-                    }
-                else {
-                    setTimeout(function(){
-                        let card1 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[0].name}`))
-                        console.log(card1)
-                        card1.forEach((card)=>{
-                            card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-                        })
-                        let card2 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[1].name}`))
-                        card2.forEach((card)=>{
-                            card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-                        })
+                clicked_cards.push(this);
+                if (clicked_cards.length == 2){
+                    if (clicked_cards[0].id == clicked_cards[1].id) {
+                        points += 2;
+                        let card1 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[0].name}`))[0]
+                        card1.classList.add("matched")
+                        let card2 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[1].name}`))[1]
+                        card2.classList.add("matched")
                         clicked_cards = []
-                    }, 1500)
+                        }
+                    else {
+                        setTimeout(function(){
+                            let card1 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[0].name}`))
+                            console.log(card1)
+                            card1.forEach((card)=>{
+                                card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                                card.classList.remove('turned_over')
+                            })
+                            let card2 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[1].name}`))
+                            card2.forEach((card)=>{
+                                card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                                card.classList.remove('turned_over')
+                            })
+                            clicked_cards = []
+                        }, 1500)
+                        }
                     }
                 }
-            }
+
 
             function gameOver() {
                 if (points == 18){
