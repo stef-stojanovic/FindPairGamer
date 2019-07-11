@@ -6,11 +6,11 @@
 
 
         // Points to Win
-        // const points_to_win = document.querySelectorAll('img.toy-avatar').length
+        const points_to_win = document.querySelectorAll('img.toy-avatar').length
 
-        // let points = 0;
+        let points = 0;
 
-        // if (points == ) {
+        // if (points == points_to_win) {
         //     alert('You Win!')
         // }
 

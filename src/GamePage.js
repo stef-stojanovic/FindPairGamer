@@ -5,7 +5,6 @@ class GamePage {
         this.render()
         this.timer()
         
-        
     }
     
     render() {
@@ -21,7 +20,6 @@ class GamePage {
         let game_div_row = document.createElement('div');
         game_div_row.setAttribute('class', 'row')
         game_div_row.setAttribute('style', 'margin: 15px;')
-
     
         // Create div and assign id game_title_div
         let game_title_div = document.createElement('div');
@@ -66,10 +64,11 @@ class GamePage {
 
         let total_moves_num = document.createElement('h3');
         total_moves_num.setAttribute('id', 'total_moves_num');
-        total_moves_num.innerText = `moves: ${total_moves}`;
+        total_moves_num.innerText = `Moves: ${total_moves}`;
         total_moves_div.append(total_moves_num);
         game_div_row.append(total_moves_div);
-
+        
+        // Populates Cards
         let toy_cards = [
             
             {

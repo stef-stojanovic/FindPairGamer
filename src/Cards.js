@@ -28,46 +28,36 @@ class Card {
         img.setAttribute('id', this.id)
 
         
-
-        
         img.addEventListener('click', () => {
             
             let dealt_cards = document.querySelectorAll(`img.toy-avatar`)
             let total_moves_num = document.getElementById('total_moves_num');
-            if (clicked_cards.length < 2) {
+            if (clicked_cards.length == 2) {
                 total_moves++
-                total_moves_num.innerText = `moves: ${total_moves}`;
-                img.src = this.image;
-                clicked_cards.push(this.id);
-                console.log(clicked_cards);
-                if (clicked_cards[0] == clicked_cards[1]) {
-                    
+                console.log(total_moves);
+                if (clicked_cards[0].id == clicked_cards[1].id) {
+                    points+=2
+                    clicked_cards = [];
+                }
+                else {
+                    let unmatched_cards = document.querySelectorAll
+                    clicked_cards = [];
                 }
             }
-            else if (clicked_cards.length == 2){
 
-                if (clicked_cards[0] == clicked_cards[1]) {
 
-                }
-            }
             
+        
             
-            
-            setTimeout( ()=>{
-                img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-            }, 2000)
         })
         
-        div.append(img)
-        
-        div_flex.append(div)
+        div.append(img);
+
+        div_flex.append(div);
         
         game_page_div.append(div_flex);
-        
-    }
     
-    flipped_cards() {
-    }
         
 
+    }
 }
