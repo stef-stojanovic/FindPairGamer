@@ -86,7 +86,7 @@ class HomePage {
     // Starting Game Page
     signInButton.addEventListener('click', (e)=>{
       e.preventDefault()
-      let userName = signInInput.value
+      userName = signInInput.value
       new GamePage(userName)
     })
   }

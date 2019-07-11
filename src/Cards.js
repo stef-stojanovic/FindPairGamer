@@ -32,7 +32,7 @@ class Card {
         
         img.addEventListener('click', displayCard);
         img.addEventListener('click', openCard)
-        // img.addEventListener('click', gameOver)
+        img.addEventListener('click', gameOver)
 
         function displayCard() {
             let total_moves_num = document.getElementById('total_moves_num');
@@ -63,6 +63,18 @@ class Card {
                     }, 1500)
                     }
                 }
+            }
+
+            function gameOver() {
+                if (points == 18){
+                    let finalPoints = points
+                    let finalTime = timer
+                    // post request to Database for points
+                    fetch()
+                    alert('You Win!')
+                    new HomePage()
+                }
+
             }
             
             div.append(img)

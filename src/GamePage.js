@@ -179,7 +179,6 @@ class GamePage {
 
         // Timer on Game Page
         timer() {
-            let timer;
             let timerDiv = document.createElement('div')
             timer = 0; 
             total_moves_div.append(timerDiv)
