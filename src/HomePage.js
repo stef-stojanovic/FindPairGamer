@@ -5,6 +5,7 @@ class HomePage {
 
   render() {
     
+    points = 0;
     // Front Page
     let main_page_div = document.querySelector('#main_page_div');
     main_page_div.innerText = '';

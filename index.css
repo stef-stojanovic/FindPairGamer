@@ -185,4 +185,16 @@ body {
     margin: auto;
    }
 
-   
+   .matched {
+     pointer-events: none;
+     justify-self: center;
+     height: 8rem;
+     width: 8rem;
+   }
+
+   .turned_over {
+    pointer-events: none;
+    justify-self: center;
+    height: 8rem;
+    width: 8rem;
+  }
