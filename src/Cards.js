@@ -26,36 +26,49 @@ class Card {
         img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg";
         img.setAttribute('class', 'toy-avatar');
         
-
-        
         img.addEventListener('click', () => {
             
+            if (clicked_cards.length == 2) {
+                clicked_cards.forEach((clicked_card) => {
+                    clicked_card.image = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                })
+                console.log(clicked_cards)
+                clicked_cards = []
+                
+                return 
+            }
+            else {
+            // Moves Counter
             let total_moves_num = document.getElementById('total_moves_num');
             total_moves++
-            total_moves_num.innerText = `moves: ${total_moves}`;
+            total_moves_num.innerText = `Moves: ${total_moves}`;
             img.src = this.image;
             clicked_cards.push(this);
             console.log(clicked_cards);
-            
-            if (clicked_cards.length >= 2) {
-                if (clicked_cards[0] == clicked_cards[1]) {
-                    points+=2;
+            if (clicked_cards.length == 2){     
+                if (clicked_cards[0].id == clicked_cards[1].id) {
+                    points += 2;
                     console.log(points);
-                    for (let i = 0; i <= 1; i++) {
-                        clicked_cards[i].src = 'gray.png'
-                    }
+                    clicked_cards.forEach((clicked_card)=>{
+                        clicked_card.image = 'gray.png'
+                    })
                 }
                 else {
-                    clicked_cards = []
+                    clicked_cards.forEach((clicked_card) => {
+                        setTimeout( ()=>{
+                        clicked_card.image = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
+                    }, 2000)
+                })
+                    // clicked_cards = []
                 }
             }
+            else {
+                return
+            }
+            }
+            })
             
-            setTimeout( ()=>{
-                img.src = "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
-            }, 2000)
-        })
-        
-        div.append(img)
+            div.append(img)
         
         div_flex.append(div)
         

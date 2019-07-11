@@ -8,7 +8,7 @@
         // Points to Win
         // const points_to_win = document.querySelectorAll('img.toy-avatar').length
 
-        // let points = 0;
+        let points = 0;
 
         // if (points == ) {
         //     alert('You Win!')
