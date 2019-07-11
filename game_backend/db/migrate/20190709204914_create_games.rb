@@ -3,7 +3,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
     create_table :games do |t|
       t.integer :time
       t.integer :score
-      t.integer :user_id
+      t.belongs_to :user
 
       t.timestamps
     end
