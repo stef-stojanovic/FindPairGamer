@@ -4,6 +4,18 @@ class HomePage {
   }
 
   render() {
+
+    let high_score_games = []
+    // API request to get games
+      fetch(`http://localhost:3000/games`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        high_score_games = result;
+        console.log(high_score_games)
+      });
+
     
     points = 0;
     // Front Page
@@ -49,6 +61,7 @@ class HomePage {
     main_page_div.append(document.createElement('br'))
     main_page_div.append(highScoreDiv)
   }
+  
   
   // Registering User
   typeInUser(title_div){

@@ -79,7 +79,7 @@ class Card {
                     let finalPoints = points
                     let finalTime = timer
                     // post request to Database for points
-                    fetch(users_path, {
+                    fetch(`http://localhost:3000/users`, {
                         method: "POST",
                         headers: {
                             "Content-Type":"application/json", 
@@ -88,10 +88,13 @@ class Card {
                         body: JSON.stringify({
                             name: userName
                         })
-                    })
+                    }).then(res=> res.json())
+                    .then(res=> console.log('we got a response', res))
+                    .catch(err=> console.log('this be an error', err))
                     alert('You Win!')
                     new HomePage()
                 }
+                // console.log('username', userName)
 
             }
             
