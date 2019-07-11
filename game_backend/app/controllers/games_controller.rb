@@ -5,8 +5,8 @@ class GamesController < ApplicationController
     end
 
     def index
-        game = Game.all
-        render json: game
+        games = Game.all
+        render json: games
     end
 
     def update
