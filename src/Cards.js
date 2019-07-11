@@ -71,7 +71,16 @@ class Card {
                     let finalPoints = points
                     let finalTime = timer
                     // post request to Database for points
-                    fetch()
+                    fetch(users_path, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type":"application/json", 
+                            "Accept":"application/json"
+                        },
+                        body: JSON.stringify({
+                            name: userName
+                        })
+                    })
                     alert('You Win!')
                     new HomePage()
                 }
@@ -85,9 +94,4 @@ class Card {
             game_page_div.append(div_flex);
             
     }
-    
-        
-
-
 }
-

@@ -187,6 +187,5 @@ class GamePage {
                 timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
             }, 1000)
         }
-        
     }
 
