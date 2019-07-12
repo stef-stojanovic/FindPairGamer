@@ -3,21 +3,34 @@ class HomePage {
     this.render()
   }
 
-  render() {
+  render =() => {
 
-    let high_score_games = []
+    
     // API request to get games
       fetch(`http://localhost:3000/games`)
       .then(function(response) {
         return response.json();
       })
-      .then(function(result) {
+      .then((result) => {
         high_score_games = result;
-        console.log(high_score_games)
-        
-      });
+        this.fetchUsers()
+        // this.everything_else(high_score_games)
+      })
+    }
 
-    
+    fetchUsers() {
+      fetch(`http://localhost:3000/users`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then((result) => {
+        high_scoring_users = result;
+        console.log(high_scoring_users)
+        this.everything_else(high_score_games)
+      })
+    }
+
+  everything_else() {
     points = 0;
     // Front Page
     let main_page_div = document.querySelector('#main_page_div');
@@ -52,9 +65,9 @@ class HomePage {
     let highScoreList = document.createElement('ol')
     let highScoreHeader = document.createElement('h2')
     highScoreHeader.innerHTML = "High Score"
-    for(let i = 0; i <=3; i++){
+    for(let i = 0; i < high_score_games.length; i++){
       let score = document.createElement('li')
-      score.innerHTML = `[Player] + [Score]`
+      score.innerHTML = `UserName:${high_score_games[i].user_id} + Score:${high_score_games[i].score}`
       highScoreList.append(score)
     }
     highScoreDiv.setAttribute('class', 'high_score_container')
@@ -62,7 +75,6 @@ class HomePage {
     main_page_div.append(document.createElement('br'))
     main_page_div.append(highScoreDiv)
   }
-  
   
   // Registering User
   typeInUser(title_div){

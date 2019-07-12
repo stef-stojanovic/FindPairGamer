@@ -57,7 +57,6 @@ class Card {
                     else {
                         setTimeout(function(){
                             let card1 = Array.prototype.slice.call(document.getElementsByName(`${clicked_cards[0].name}`))
-                            console.log(card1)
                             card1.forEach((card)=>{
                                 card.src =  "https://previews.123rf.com/images/rlmf/rlmf1512/rlmf151200181/49319355-playing-cards-back.jpg"
                                 card.classList.remove('turned_over')
@@ -78,7 +77,7 @@ class Card {
                 if (points == 18){
                     let finalPoints = points
                     let finalTime = timer
-                    // post request to Database for points
+                    // post request to register the user
                     fetch(`http://localhost:3000/users`, {
                         method: "POST",
                         headers: {
@@ -88,14 +87,32 @@ class Card {
                         body: JSON.stringify({
                             name: userName
                         })
-                    }).then(res=> res.json())
-                    .then(res=> console.log('we got a response', res))
-                    .catch(err=> console.log('this be an error', err))
-                    alert('You Win!')
-                    new HomePage()
+                    }).then(res => res.json())
+                    .then(function(result) {
+                        userId = result.id
+                        postGame(userId);
+                    })
+                    // post request to register the game
+                    function postGame(){
+                    fetch(`http://localhost:3000/games`, {
+                        method: "POST",
+                        headers: {
+                                "Content-Type":"application/json", 
+                                "Accept":"application/json"
+                            },
+                            body: JSON.stringify({
+                                time: finalTime,
+                                score: finalPoints,
+                                user_id: userId
+                            })
+                        }).then(()=>{
+                            setTimeout(() => {
+                                alert('You Win')
+                                new HomePage()
+                            }, 1500)
+                        })
+                    }
                 }
-                // console.log('username', userName)
-
             }
             
             div.append(img)

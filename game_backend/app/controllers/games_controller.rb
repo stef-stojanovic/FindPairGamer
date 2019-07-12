@@ -5,7 +5,8 @@ class GamesController < ApplicationController
     end
 
     def create
-        game = Game.create(params)
+        game = Game.create(game_params)
+        render json: game
     end
 
 
@@ -22,6 +23,10 @@ class GamesController < ApplicationController
     end
 
     def game_params
-        params.permit( :time, :score, :user_id )
+        params.permit(
+            :time,
+            :score, 
+            :user_id
+            )
     end
 end
