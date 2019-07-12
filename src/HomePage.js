@@ -12,9 +12,10 @@ class HomePage {
         return response.json();
       })
       .then((result) => {
-        high_score_games = result;
+        high_score_games = result.sort((a,b)=>{
+          return b.score - a.score
+        });
         this.fetchUsers()
-        // this.everything_else(high_score_games)
       })
     }
 
@@ -64,8 +65,8 @@ class HomePage {
     let highScoreDiv = document.createElement('div')
     let highScoreList = document.createElement('ol')
     let highScoreHeader = document.createElement('h2')
-    highScoreHeader.innerHTML = "High Score"
-    for(let i = 0; i < high_score_games.length; i++){
+    highScoreHeader.innerHTML = "High Scores"
+    for(let i = 0; i < 5; i++){
       let score = document.createElement('li')
       score.innerHTML = `UserName:${high_score_games[i].user_id} + Score:${high_score_games[i].score}`
       highScoreList.append(score)

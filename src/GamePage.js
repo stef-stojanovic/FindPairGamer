@@ -3,7 +3,6 @@ class GamePage {
         
         this.userName = userName
         this.render()
-        this.timer()
         
     }
     
@@ -61,12 +60,22 @@ class GamePage {
         let total_moves_div = document.createElement('div');
         total_moves_div.setAttribute('id', 'total_moves_div');
         total_moves_div.setAttribute('class', 'col');
-
+        
         let total_moves_num = document.createElement('h3');
         total_moves_num.setAttribute('id', 'total_moves_num');
         total_moves_num.innerText = `Moves: ${total_moves}`;
         total_moves_div.append(total_moves_num);
         game_div_row.append(total_moves_div);
+        
+        let timerDiv = document.createElement('div')
+        timer = 0; 
+        total_moves_div.append(timerDiv)
+        timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
+        let x = setInterval(function () { 
+            timer += 1   
+            timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
+        }, 1000)
+    
         
         // Populates Cards
         let toy_cards = [
@@ -178,14 +187,5 @@ class GamePage {
         }
 
         // Timer on Game Page
-        timer() {
-            let timerDiv = document.createElement('div')
-            timer = 0; 
-            total_moves_div.append(timerDiv)
-            let x = setInterval(function () { 
-                timer += 1   
-                timerDiv.innerHTML = `<h3>Timer:${timer}<h3>`
-            }, 1000)
-        }
     }
 
