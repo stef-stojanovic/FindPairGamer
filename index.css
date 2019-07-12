@@ -175,6 +175,10 @@ body {
 
   }
 
+  li {
+    text-align: left;
+  }
+
   .high_score_container {
     padding: 1rem;
     width: 20rem;
@@ -209,7 +213,7 @@ body {
       transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
       animation-timing-function: ease-in;
     }
-    
+
     to {
       transform: perspective(400px)
     }
