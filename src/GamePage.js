@@ -8,7 +8,7 @@ class GamePage {
     
     render() {
 
-        let total_moves = 0;
+        total_moves = 0;
         
         // Locate game_page_div and clear contents, hide main_page_div display
         let game_page_div = document.querySelector('#game_page_div');
@@ -186,6 +186,5 @@ class GamePage {
     
         }
 
-        // Timer on Game Page
     }
 

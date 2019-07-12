@@ -76,7 +76,7 @@ class Card {
             function gameOver() {
                 if (points == 18){
                     let finalTime = timer
-                    let finalPoints = 1000 - finalTime - totalMoves*2
+                    let finalPoints = 1000 - finalTime - total_moves*2
                     // post request to register the user
                     fetch(`http://localhost:3000/users`, {
                         method: "POST",
@@ -107,7 +107,7 @@ class Card {
                             })
                         }).then(()=>{
                             setTimeout(() => {
-                                alert('You Win')
+                                alert(`You Win! Your Score is ${finalPoints}`)
                                 new HomePage()
                             }, 1500)
                         })
