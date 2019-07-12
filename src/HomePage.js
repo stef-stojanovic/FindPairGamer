@@ -14,6 +14,7 @@ class HomePage {
       .then(function(result) {
         high_score_games = result;
         console.log(high_score_games)
+        
       });
 
     
